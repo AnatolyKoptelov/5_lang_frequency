@@ -16,30 +16,31 @@ def get_most_frequent_words(text, quantity):
     return Counter(words).most_common(quantity)
 
 
-def clear_text(text):
+def remove_punctuation_and_spaces(text):
     long_dash_utf8 = '—'
     long_dash_cp1251 = '–'
-    for char in '{}{}{}'.format(
+    punctuation_symbols = '{}{}{}'.format(
         string.punctuation,
         long_dash_utf8,
         long_dash_cp1251,
-    ):
+    )
+    for char in punctuation_symbols:
         text = text.replace(char, ' ')
-    text = re.sub('\s+', ' ', text)
+        text = re.sub('\s+', ' ', text)
     return text
 
 
 def get_args(list_of_allowable_codecs):
-   parser = argparse.ArgumentParser(
+    parser = argparse.ArgumentParser(
         description='Frequency Analysis of Words'
-   )
-   parser.add_argument(
+    )
+    parser.add_argument(
         'path',
         metavar='path',
         type=str,
         help='File path'
-   )
-   parser.add_argument(
+    )
+    parser.add_argument(
         '-q',
         '--quantity',
         action='store',
@@ -47,8 +48,8 @@ def get_args(list_of_allowable_codecs):
         type=int,
         default=10,
         help='How many frequent words to display'
-   )
-   parser.add_argument(
+    )
+    parser.add_argument(
         '-c',
         '--codec',
         action='store',
@@ -56,8 +57,8 @@ def get_args(list_of_allowable_codecs):
         default='utf_8',
         choices=list_of_allowable_codecs,
         help='Use for decode a original file',
-   )
-   return parser.parse_args()
+    )
+    return parser.parse_args()
 
 
 if __name__ == '__main__':
@@ -80,7 +81,7 @@ if __name__ == '__main__':
         ))
     else:
         if text is not None:
-            text = clear_text(text)
+            text = remove_punctuation_and_spaces(text)
             most_frequent_words = get_most_frequent_words(text, args.quantity)
             for word, entrances in most_frequent_words:
                 print('{}\t{}'.format(word, entrances))
