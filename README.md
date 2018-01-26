@@ -8,7 +8,8 @@ You can use optional parameter **-c** for decode an original file. This applicat
  - utf_8
  - cp1251
  - koi8_r
- - cp866,mac_cyrillic
+ - cp866
+ - mac_cyrillic
  
 Use optional parameter **-q** for number of words setting on output
 
