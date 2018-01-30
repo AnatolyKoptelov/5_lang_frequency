@@ -55,7 +55,6 @@ def get_args():
 
 if __name__ == '__main__':
     args = get_args()
-    print(args)
     try:
         text = load_data(args.path, args.codec)
         if text:
