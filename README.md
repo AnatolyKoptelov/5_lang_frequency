@@ -12,6 +12,7 @@ You can use optional parameter **-c** for decode an original file. This applicat
  - mac_cyrillic
  
 Use optional parameter **-q** for number of words setting on output
+Use optional parameter **-r** for reverse result and view less frequent words
 
 # Quickstart
 
@@ -34,9 +35,7 @@ his     1146
 Use -h option for read application info:
 ```
 $ python lang_frequency.py -h
-usage: lang_frequency.py [-h] [-q [QUANTITY]]
-                         [-c [{utf_8,cp1251,koi8_r,cp866,mac_cyrillic}]]
-                         path
+usage: lang_frequency.py [-h] [-q QUANTITY] [-c CODEC] [-r] path
 
 Frequency Analysis of Words
 
@@ -45,15 +44,13 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -q [QUANTITY], --quantity [QUANTITY]
+  -q QUANTITY, --quantity QUANTITY
                         How many frequent words to display
-  -c [{utf_8,cp1251,koi8_r,cp866,mac_cyrillic}], --codec [{utf_8,cp1251,koi8_r,cp866,mac_cyrillic}]
-                        Use for decode a original file
+  -c CODEC, --codec CODEC
+                        Use for decode an original file. Popular codecs:
+                        utf_8, cp1251, koi8_r, cp866, mac_cyrillic
+  -r, --reverse         Use for getting less frequent words
 ```
-
-# Future
-
-In the next release will be add **-r** command line option for less frequent words displaying
 
 # Project Goals
 
