@@ -3,15 +3,11 @@
 
 Application for counting words frequency on a text. File path of this text file is  command line required argument.
 By default, it works with encoded utf_8 files, but sometimes your files can have a different encoding. 
-You can use optional parameter **-c** for decode an original file. This application supports these codecs:
 
- - utf_8
- - cp1251
- - koi8_r
- - cp866
- - mac_cyrillic
+You can use optional parameter **-c** for decode an original file
  
 Use optional parameter **-q** for number of words setting on output
+
 Use optional parameter **-r** for reverse result and view less frequent words
 
 # Quickstart
