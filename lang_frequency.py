@@ -15,8 +15,7 @@ def get_most_frequent_words(words):
 
 
 def extract_words(text):
-    words = re.findall('[a-zа-я]+', text, re.IGNORECASE)
-    return [word.lower() for word in words]
+    return re.findall('[a-zа-я]+', text.lower())
 
 
 def get_args():
@@ -72,5 +71,5 @@ if __name__ == '__main__':
             error,
             args.path,
             args.codec,
-            'Try to use other codec',
+            'Try to use an other codec',
         ))
